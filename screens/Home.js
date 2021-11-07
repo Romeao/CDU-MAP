@@ -6,7 +6,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import IonicIcon  from "react-native-vector-icons/Ionicons";
 import {Text, Dimensions} from 'react-native'
-import { SafeAreaView } from "react-native-safe-area-context";
 
 //Imported Screens
 import TabOne from "../screens/TabOne";
@@ -20,7 +19,9 @@ const Stack = createStackNavigator();
 
 function TabOneStackScreen (){
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
             <Stack.Screen name="Map" component={TabOne}/>
         </Stack.Navigator>
     )
@@ -29,8 +30,10 @@ function TabOneStackScreen (){
 
 function TabTwoStackScreen (){
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Map" component={TabTwo}/>
+        <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
+            <Stack.Screen name="Menu" component={TabTwo}/>
         </Stack.Navigator>
     )
 
@@ -38,8 +41,10 @@ function TabTwoStackScreen (){
 
 function TabThreeStackScreen (){
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Map" component={TabThree}/>
+        <Stack.Navigator screenOptions={{
+            headerShown: false
+          }}>
+            <Stack.Screen name="SignOut" component={TabThree}/>
         </Stack.Navigator>
     )
 
