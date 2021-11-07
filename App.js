@@ -1,16 +1,20 @@
 
+import 'react-native-gesture-handler';
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import LoginScreen from "./screens/Login";
 import HomeScreen from "./screens/Home";
 import SignUpScreen from "./screens/SignUp";
 import  firebase  from 'firebase/app';
 import "firebase/auth";
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 const Stack = createNativeStackNavigator();
-
+const Drawer = createDrawerNavigator();
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
